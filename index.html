@@ -3,26 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SUPKANO — Yasal Belgeler</title>
+<meta name="description" content="SUPKANO — Türkiye'nin stand up paddle (SUP) ve kano topluluğu. Antrenmanını GPS'le kaydet, rotaları keşfet, etkinliklerde buluş.">
+<meta name="theme-color" content="#0077B6">
+<title>SUPKANO — SUP &amp; Kano Topluluğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--brand:#0077B6;--ink:#1a1a1a;--mute:#666;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       color:var(--ink);line-height:1.6;margin:0 auto;padding:24px;max-width:760px;background:#fff;}
-  h1{color:var(--brand);}
-  ul{list-style:none;padding:0;}
-  li{margin:14px 0;}
-  a{color:var(--brand);font-size:1.15rem;font-weight:600;text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .mute{color:var(--mute);}
-  @media (prefers-color-scheme:dark){ body{background:#0d0d0f;color:#e6e6e6;} }
+  :root{
+    --ocean-1:#0077B6; --ocean-2:#00B4D8; --deep:#012A3C;
+    --accent:#FF8A3D;            /* gün batımı vurgusu (app icon'la uyumlu) */
+    --bg:#F2FAFD; --card:#FFFFFF; --ink:#0C2A38; --mute:#5A7180; --line:#E2EEF4;
+    --disp:"Barlow Condensed",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#061620; --card:#0E2735; --ink:#E8F4FA; --mute:#9FB8C6; --line:#16384A; }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;color:#fff;text-align:center;
+        padding:96px 24px 140px;
+        background:linear-gradient(160deg,#0090D6 0%,var(--ocean-1) 45%,var(--deep) 100%);}
+  .hero::before{content:"";position:absolute;inset:-40% -20% auto -20%;height:80%;
+        background:radial-gradient(closest-side,rgba(255,255,255,.18),transparent 70%);
+        transform:rotate(-8deg);pointer-events:none;}
+  .badge-soon{display:inline-flex;align-items:center;gap:8px;
+        background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+        color:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;
+        letter-spacing:.02em;backdrop-filter:blur(6px);}
+  .badge-soon svg{width:16px;height:16px;}
+  .logo-badge{width:96px;height:96px;margin:28px auto 18px;display:block;
+        border-radius:22px;object-fit:cover;
+        filter:drop-shadow(0 14px 30px rgba(0,0,0,.30));}
+  h1{font-family:var(--disp);font-weight:900;letter-spacing:-.03em;line-height:.92;
+        margin:0;font-size:clamp(3.4rem,16vw,8rem);text-transform:uppercase;}
+  .tagline{margin:18px auto 0;max-width:620px;font-size:clamp(1.05rem,3.5vw,1.4rem);
+        color:rgba(255,255,255,.92);font-weight:500;}
+  .hero-note{margin-top:14px;font-size:14px;color:rgba(255,255,255,.7);}
+  /* dalga ayırıcı */
+  .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:90px;display:block;}
+  .wave path{fill:var(--bg);}
+
+  /* ---------- FEATURES ---------- */
+  .section{padding:84px 0;}
+  .eyebrow{font-family:var(--disp);font-weight:700;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--ocean-1);font-size:15px;text-align:center;margin:0 0 8px;}
+  .h2{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1;
+        text-align:center;margin:0 0 48px;font-size:clamp(2.2rem,7vw,3.4rem);}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr);}
+  @media (max-width:880px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;
+        padding:28px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,119,182,.14);
+        border-color:rgba(0,119,182,.35);}
+  .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;
+        background:linear-gradient(140deg,var(--ocean-2),var(--ocean-1));color:#fff;}
+  .ic svg{width:26px;height:26px;}
+  .card h3{font-family:var(--disp);font-weight:700;font-size:1.45rem;margin:0 0 6px;letter-spacing:-.01em;}
+  .card p{margin:0;color:var(--mute);font-size:15.5px;}
+
+  /* ---------- CLOSING ---------- */
+  .closing{text-align:center;}
+  .closing .h2{margin-bottom:14px;}
+  .closing p{max-width:560px;margin:0 auto;color:var(--mute);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--deep);color:#cfe6f1;padding:56px 24px 40px;text-align:center;}
+  footer .brand{font-family:var(--disp);font-weight:900;font-size:1.8rem;color:#fff;letter-spacing:.02em;}
+  .flinks{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;margin:22px 0 18px;}
+  .flinks a{color:#bfe0f0;text-decoration:none;font-weight:600;padding:6px 4px;
+        border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+  .flinks a:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+  .fmeta{font-size:13.5px;color:#7fa9bd;line-height:1.7;}
+  .fmeta a{color:#bfe0f0;}
+
+  a:focus-visible,.card:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px;}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .card{transition:none;}
+  }
 </style>
 </head>
 <body>
-  <h1>SUPKANO — Yasal Belgeler</h1>
-  <p class="mute">SUP &amp; Kano Topluluğu Uygulaması</p>
-  <ul>
-    <li><a href="privacy.html">Gizlilik Politikası →</a></li>
-    <li><a href="kvkk.html">KVKK Aydınlatma Metni →</a></li>
-  </ul>
+
+  <header class="hero">
+    <span class="badge-soon">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.78c-.02-2.06 1.68-3.05 1.76-3.1-.96-1.4-2.46-1.6-2.99-1.62-1.27-.13-2.48.75-3.13.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.39 2.06-1.44 2.5-.37 6.2 1.04 8.23.69.99 1.51 2.1 2.59 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.61.67 2.71.65 1.12-.02 1.83-1.01 2.51-2.01.79-1.15 1.12-2.27 1.14-2.33-.03-.01-2.18-.84-2.2-3.32zM14.39 6.6c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.6-.99 1.58-.87 2.5.92.07 1.86-.47 2.43-1.13z"/></svg>
+      App Store'da çok yakında
+    </span>
+
+    <!-- Marka logosu (repo kökündeki logo.png ile aynı klasörde) -->
+    <img class="logo-badge" src="logo.png" alt="SUPKANO logosu" width="96" height="96">
+
+    <!-- Yedek (logo.png yüklenmezse inline çizim): JS gerektirmez, isteğe bağlı -->
+    <!-- <svg class="logo-badge" ...>...</svg> -->
+
+    <h1>SUPKANO</h1>
+    <p class="tagline">Türkiye'nin SUP ve kano topluluğu. Rotanı GPS'le çiz, yeni yerleri keşfet, etkinliklerde buluş.</p>
+    <p class="hero-note">iOS · Apple ile Giriş</p>
+
+    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z"/>
+    </svg>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Suya çık, rotanı bırak</p>
+        <h2 class="h2">Tek uygulamada</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <h3>Antrenman Takibi</h3>
+            <p>GPS ile rotanı otomatik çiz; mesafe, süre ve hızını anında gör.</p>
+          </article>
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21 1 6"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></svg></div>
+            <h3>Rotalar</h3>
+            <p>Topluluğun rotalarını keşfet, kendininkini paylaş, favorile ve puanla.</p>
+          </article>
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Topluluk</h3>
+            <p>Anılarını paylaş, beğen, takip et; SUP ve kano severlerle bağ kur.</p>
+          </article>
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <h3>Etkinlikler</h3>
+            <p>Yakındaki buluşmalara katıl, kendi etkinliğini düzenle, sohbete dahil ol.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing">
+      <div class="wrap">
+        <h2 class="h2">Topluluğa katıl</h2>
+        <p>Türkiye'nin dört bir yanından SUP ve kano tutkunları SUPKANO'da buluşuyor. Sen de yakında aramızda ol.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand">SUPKANO</div>
+      <nav class="flinks" aria-label="Yasal bağlantılar">
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="kvkk.html">KVKK Aydınlatma Metni</a>
+        <a href="mailto:studyosefo@gmail.com">İletişim</a>
+      </nav>
+      <p class="fmeta">
+        İletişim: <a href="mailto:studyosefo@gmail.com">studyosefo@gmail.com</a><br>
+        © 2026 SUPKANO · Tüm hakları saklıdır.
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
