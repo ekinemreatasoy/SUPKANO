@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPKANO Kullanım Şartları</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #111;
+    }
+    h1, h2 {
+      color: #0a3d62;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .meta {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    section {
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>SUPKANO Kullanım Şartları</h1>
+
+<div class="meta">
+  <strong>Son güncelleme:</strong> 11 Haziran 2026
+</div>
+
+<section>
+  <p>
+    SUPKANO’yu kullanarak bu Kullanım Şartları’nı kabul etmiş sayılırsınız.
+    Lütfen hizmeti kullanmadan önce dikkatlice okuyunuz.
+  </p>
+</section>
+
+<section>
+  <h2>1. Hizmet Tanımı</h2>
+  <p>
+    SUPKANO; kullanıcıların stand-up paddle (SUP), kano ve benzeri su sporları aktivitelerini
+    GPS ile kaydetmelerine, rotalarını görüntülemelerine, paylaşmalarına ve topluluk içeriklerine
+    erişmelerine olanak sağlayan bir mobil uygulamadır.
+  </p>
+  <p>
+    SUPKANO bir tur operatörü, spor kulübü, organizatör veya resmi eğitim kurumu değildir.
+  </p>
+</section>
+
+<section>
+  <h2>2. Kullanıcı Sorumluluğu</h2>
+  <p>
+    Kullanıcılar, SUPKANO üzerinden oluşturdukları, yükledikleri veya paylaştıkları tüm içeriklerden tamamen sorumludur.
+  </p>
+  <p>
+    SUPKANO içerikleri doğrulamaz, onaylamaz veya garanti etmez.
+  </p>
+</section>
+
+<section>
+  <h2>3. Risklerin Kabulü</h2>
+  <p>
+    SUPKANO açık hava ve su sporlarına yönelik bir platformdur ve bu aktiviteler doğası gereği risk içerir.
+  </p>
+  <p>
+    Kullanıcı; hava koşulları, su durumu, fiziksel riskler ve çevresel faktörlerden kaynaklanan tüm riskleri kabul eder.
+    SUPKANO bu risklerden doğabilecek zarar, kayıp veya yaralanmalardan sorumlu değildir.
+  </p>
+</section>
+
+<section>
+  <h2>4. Konum ve GPS Kullanımı</h2>
+  <p>
+    SUPKANO, aktiviteleri kaydetmek ve harita üzerinde göstermek için konum verisi kullanır.
+  </p>
+  <p>
+    GPS verilerinin doğruluğu cihaz ve çevresel koşullara bağlı olarak değişebilir ve garanti edilmez.
+  </p>
+</section>
+
+<section>
+  <h2>5. Etkinlikler</h2>
+  <p>
+    SUPKANO etkinliklerin organizatörü değildir ve etkinliklerden doğabilecek sonuçlardan sorumlu tutulamaz.
+  </p>
+</section>
+
+<section>
+  <h2>6. İçerik Moderasyonu</h2>
+  <p>
+    SUPKANO uygunsuz içerikleri kaldırma veya erişimi kısıtlama hakkını saklı tutar.
+  </p>
+</section>
+
+<section>
+  <h2>7. Sorumluluk Sınırlandırması</h2>
+  <p>
+    SUPKANO, hizmetin kullanımından kaynaklanan doğrudan veya dolaylı hiçbir zarardan sorumlu değildir.
+  </p>
+</section>
+
+<section>
+  <h2>8. Şartlarda Değişiklik</h2>
+  <p>
+    SUPKANO bu şartları zaman zaman güncelleyebilir. Güncellenmiş şartlar yayınlandığı anda geçerli olur.
+  </p>
+</section>
+
+<section>
+  <h2>9. İletişim</h2>
+  <p>
+    📧 studyosefo@gmail.com
+  </p>
+</section>
+
+</body>
+</html>
