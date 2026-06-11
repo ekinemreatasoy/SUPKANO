@@ -40,6 +40,21 @@
         color:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;
         letter-spacing:.02em;backdrop-filter:blur(6px);}
   .badge-soon svg{width:16px;height:16px;}
+  /* App Store indirme butonu */
+  .appstore-btn{display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+        background:#000;color:#fff;border-radius:14px;padding:12px 22px;text-decoration:none;
+        box-shadow:0 12px 30px rgba(0,0,0,.28);transition:transform .15s ease,box-shadow .15s ease;}
+  .appstore-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.34);}
+  .appstore-btn svg{width:26px;height:26px;fill:#fff;}
+  .ab-text{display:flex;flex-direction:column;line-height:1.05;text-align:left;}
+  .ab-text small{font-size:11px;font-weight:600;opacity:.85;}
+  .ab-text strong{font-size:18px;font-weight:800;letter-spacing:.01em;}
+  @media (prefers-reduced-motion:reduce){ .appstore-btn{transition:none;} }
+  /* Karanlık modda: beyaz pill (koyu zeminde de görünsün) */
+  @media (prefers-color-scheme:dark){
+    .appstore-btn{background:#fff;color:#0C2A38;}
+    .appstore-btn svg{fill:#0C2A38;}
+  }
   .logo-badge{width:96px;height:96px;margin:28px auto 18px;display:block;
         border-radius:22px;object-fit:cover;
         filter:drop-shadow(0 14px 30px rgba(0,0,0,.30));}
@@ -97,11 +112,6 @@
 <body>
 
   <header class="hero">
-    <span class="badge-soon">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.78c-.02-2.06 1.68-3.05 1.76-3.1-.96-1.4-2.46-1.6-2.99-1.62-1.27-.13-2.48.75-3.13.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.39 2.06-1.44 2.5-.37 6.2 1.04 8.23.69.99 1.51 2.1 2.59 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.61.67 2.71.65 1.12-.02 1.83-1.01 2.51-2.01.79-1.15 1.12-2.27 1.14-2.33-.03-.01-2.18-.84-2.2-3.32zM14.39 6.6c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.6-.99 1.58-.87 2.5.92.07 1.86-.47 2.43-1.13z"/></svg>
-      App Store'da çok yakında
-    </span>
-
     <!-- Marka logosu (repo kökündeki logo.png ile aynı klasörde) -->
     <img class="logo-badge" src="logo.png" alt="SUPKANO logosu" width="96" height="96">
 
@@ -110,6 +120,11 @@
 
     <h1>SUPKANO</h1>
     <p class="tagline">Türkiye'nin SUP ve kano topluluğu. Rotanı GPS'le çiz, yeni yerleri keşfet, etkinliklerde buluş.</p>
+
+    <a class="appstore-btn" href="https://apps.apple.com/app/id6778418946" target="_blank" rel="noopener" aria-label="App Store'dan indir">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36 12.78c-.02-2.06 1.68-3.05 1.76-3.1-.96-1.4-2.46-1.6-2.99-1.62-1.27-.13-2.48.75-3.13.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.39 2.06-1.44 2.5-.37 6.2 1.04 8.23.69.99 1.51 2.1 2.59 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.61.67 2.71.65 1.12-.02 1.83-1.01 2.51-2.01.79-1.15 1.12-2.27 1.14-2.33-.03-.01-2.18-.84-2.2-3.32zM14.39 6.6c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.6-.99 1.58-.87 2.5.92.07 1.86-.47 2.43-1.13z"/></svg>
+      <span class="ab-text"><small>App Store'dan</small><strong>İndir</strong></span>
+    </a>
     <p class="hero-note">iOS · Apple ile Giriş</p>
 
     <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
@@ -150,7 +165,11 @@
     <section class="section closing">
       <div class="wrap">
         <h2 class="h2">Topluluğa katıl</h2>
-        <p>Türkiye'nin dört bir yanından SUP ve kano tutkunları SUPKANO'da buluşuyor. Sen de yakında aramızda ol.</p>
+        <p>Türkiye'nin dört bir yanından SUP ve kano tutkunları SUPKANO'da buluşuyor. Sen de aramıza katıl.</p>
+        <a class="appstore-btn" href="https://apps.apple.com/app/id6778418946" target="_blank" rel="noopener" aria-label="App Store'dan indir">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36 12.78c-.02-2.06 1.68-3.05 1.76-3.1-.96-1.4-2.46-1.6-2.99-1.62-1.27-.13-2.48.75-3.13.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.39 2.06-1.44 2.5-.37 6.2 1.04 8.23.69.99 1.51 2.1 2.59 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.61.67 2.71.65 1.12-.02 1.83-1.01 2.51-2.01.79-1.15 1.12-2.27 1.14-2.33-.03-.01-2.18-.84-2.2-3.32zM14.39 6.6c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.6-.99 1.58-.87 2.5.92.07 1.86-.47 2.43-1.13z"/></svg>
+          <span class="ab-text"><small>App Store'dan</small><strong>İndir</strong></span>
+        </a>
       </div>
     </section>
   </main>
