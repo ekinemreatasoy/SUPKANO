@@ -26,8 +26,7 @@
     <a id="appstore" class="btn ghost" href="#">App Store'dan İndir</a>
   </div>
 <script>
-  // TODO: Uygulama yayınlanınca gerçek App Store linkiyle değiştir.
-  var APPSTORE_URL = "https://apps.apple.com/tr/app/idXXXXXXXXX";
+  var APPSTORE_URL = "https://apps.apple.com/app/id6778418946";
 
   var id = new URLSearchParams(location.search).get("id");
   var appURL = id ? ("supkano://community/" + encodeURIComponent(id)) : null;
@@ -41,10 +40,6 @@
   document.getElementById("open").addEventListener("click", function (e) {
     e.preventDefault(); openApp();
   });
-
-  // Tek seferlik otomatik deneme. App Store'a OTOMATİK yönlendirme YOK —
-  // böylece "aç?" onayı ile yarışıp App Store'u açan hata oluşmuyor.
-  // Uygulama yoksa kullanıcı yukarıdaki butondan App Store'a gider.
   openApp();
 </script>
 </body>
