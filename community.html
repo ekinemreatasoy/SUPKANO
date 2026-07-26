@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUPKANO Topluluğu</title>
+<style>
+  :root{--brand:#0077B6;}
+  html,body{height:100%;margin:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:linear-gradient(160deg,#0077B6,#00B4D8);color:#fff;
+       display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
+  .card{max-width:380px;}
+  .logo{font-size:2rem;font-weight:800;letter-spacing:1px;margin-bottom:8px;}
+  p{opacity:.92;line-height:1.5;margin:0 0 24px;}
+  .btn{display:block;background:#fff;color:var(--brand);font-weight:700;
+       padding:14px 24px;border-radius:14px;text-decoration:none;margin:10px 0;}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">SUPKANO</div>
+    <p>Topluluğu görmek için uygulamayı aç. Uygulama yüklü değilse App Store'dan indirebilirsin.</p>
+    <a id="open" class="btn" href="#">Uygulamada Aç</a>
+    <a id="appstore" class="btn ghost" href="#">App Store'dan İndir</a>
+  </div>
+<script>
+  // TODO: Uygulama yayınlanınca gerçek App Store linkiyle değiştir.
+  var APPSTORE_URL = "https://apps.apple.com/tr/app/idXXXXXXXXX";
+
+  var id = new URLSearchParams(location.search).get("id");
+  var appURL = id ? ("supkano://community/" + encodeURIComponent(id)) : null;
+
+  document.getElementById("appstore").href = APPSTORE_URL;
+
+  function openApp() {
+    if (appURL) window.location = appURL;
+  }
+
+  document.getElementById("open").addEventListener("click", function (e) {
+    e.preventDefault(); openApp();
+  });
+
+  // Tek seferlik otomatik deneme. App Store'a OTOMATİK yönlendirme YOK —
+  // böylece "aç?" onayı ile yarışıp App Store'u açan hata oluşmuyor.
+  // Uygulama yoksa kullanıcı yukarıdaki butondan App Store'a gider.
+  openApp();
+</script>
+</body>
+</html>
